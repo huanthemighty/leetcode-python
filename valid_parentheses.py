@@ -8,14 +8,14 @@ class Solution(object):
             return True
 
         stack = []
-        map = {'{': '}', '[': ']', '(': ')'}
+        mapping = {'{': '}', '[': ']', '(': ')'}
         for c in s:
             if c == '{' or c == '[' or c == '(':
                 stack.append(c)
             else:
                 if len(stack) == 0:
                     return False
-                if map.get(stack.pop()) != c:
+                if mapping.get(stack.pop()) != c:
                     return False
 
         return len(stack) == 0
